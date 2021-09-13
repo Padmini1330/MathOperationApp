@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlayList 
 {
@@ -66,5 +67,10 @@ public class NumberPlayList
 		list.forEach(n->{
 			System.out.println("for each lambda double value "+ doubleFunction.apply(n));
 			});
+		
+		Predicate<Integer> isEvenFunction=n->n%2==0;
+		list.forEach(n->{
+			System.out.println("for each value of "+n+ " check even "+isEvenFunction.test(n));
+		});
 	}
 }
