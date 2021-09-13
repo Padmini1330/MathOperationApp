@@ -7,6 +7,10 @@ public class MathOperationApp
 	interface IMathFunction
 	{
 		int calculate(int a,int b);
+		static void printResult(int a,int b,String function,IMathFunction object)
+		{
+			System.out.println("Result of "+ function+ " is "+ object.calculate(a, b));
+		}
 	}
 	
 	
@@ -17,10 +21,10 @@ public class MathOperationApp
 		IMathFunction multiplication= (int a,int b)-> (a*b);
 		IMathFunction division= (int a,int b)-> (a/b);
 		
-		System.out.println("Addition is "+addition.calculate(5, 2));
-		System.out.println("Subtraction is "+subtraction.calculate(5, 2));
-		System.out.println("Multiplication is "+multiplication.calculate(5, 2));
-		System.out.println("Division is "+division.calculate(5, 2));
+		IMathFunction.printResult(5,2,"Addition",addition);
+		IMathFunction.printResult(5,2,"Subtraction",subtraction);
+		IMathFunction.printResult(5,2,"Multiplication",multiplication);
+		IMathFunction.printResult(5,2,"Division",division);
 	}
 	
 
