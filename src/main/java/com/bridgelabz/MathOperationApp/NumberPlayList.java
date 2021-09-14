@@ -118,5 +118,13 @@ public class NumberPlayList
 		long count=list.stream().count();
 		System.out.println("avg of "+ sum +" / "+ count + "= "+ sum/count);
 		
+		//check for all even numbers, one even number and number multiple of 6
+		boolean allEven=list.stream().allMatch(isEvenFunction);
+		boolean oneEven=list.stream().anyMatch(isEvenFunction);
+		boolean noneMultipleOfSix=list.stream().noneMatch(i->i>0 && i%6==0);
+		System.out.println("all even: "+allEven);
+		System.out.println("One Even: "+oneEven);
+		System.out.println("none multiple of 6: "+noneMultipleOfSix);
+		
 	}
 }
