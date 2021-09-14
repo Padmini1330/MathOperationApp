@@ -2,6 +2,7 @@ package com.bridgelabz.MathOperationApp;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -96,6 +97,20 @@ public class NumberPlayList
 						.findFirst()
 						.orElse(null);
 		System.out.println("First even number :"+first);
+		
+		//min even numbers
+		Integer min=list.stream()
+				.filter(isEvenFunction)
+				.min((n1,n2)->n1-n2)
+				.orElse(null);
+		System.out.println("min even number: "+min);
+		
+		//max even numbers
+		Integer max=list.stream()
+				.filter(isEvenFunction)
+				.max(Comparator.comparing(Integer::intValue))
+				.orElse(null);
+		System.out.println("max even number: "+max);
 		
 	}
 }
