@@ -84,5 +84,9 @@ public class NumberPlayList
 		//process the stream,applying operations on stream and store the results
 		List<Double> doubleList=list.stream().map(toDoubleFunction).collect(Collectors.toList());
 		System.out.println("Printing double list :"+doubleList);
+		
+		//printing even double values
+		List<Double> doubleListEven=list.stream().filter(isEvenFunction).map(toDoubleFunction).collect(Collectors.toList());
+		System.out.println("Printing double list :"+doubleListEven);
 	}
 }
