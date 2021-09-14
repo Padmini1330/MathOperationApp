@@ -88,5 +88,14 @@ public class NumberPlayList
 		//printing even double values
 		List<Double> doubleListEven=list.stream().filter(isEvenFunction).map(toDoubleFunction).collect(Collectors.toList());
 		System.out.println("Printing double list :"+doubleListEven);
+		
+		//peek and show the first even number
+		Integer first=list.stream()
+						.filter(isEvenFunction)
+						.peek(n->System.out.println("Peek even number :"+n))
+						.findFirst()
+						.orElse(null);
+		System.out.println("First even number :"+first);
+		
 	}
 }
