@@ -112,5 +112,11 @@ public class NumberPlayList
 				.orElse(null);
 		System.out.println("max even number: "+max);
 		
+		//sum,count,avg of numbers
+		Integer sum=list.stream()
+				.reduce(0, Integer::sum);
+		long count=list.stream().count();
+		System.out.println("avg of "+ sum +" / "+ count + "= "+ sum/count);
+		
 	}
 }
